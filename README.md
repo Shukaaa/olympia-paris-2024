@@ -6,5 +6,7 @@ This project is a website for the 2024 Olympic Games in Paris. It is a school pr
 
 ## Stack Choice
 
-Front-end: Svelte-TS (HTML, CSS, TS)
-Back-end: Spring Boot (Kotlin, PostgreSQL, Keycloak)
+Front-end: Angular
+Back-end: Kostlin with Spring Boot
+Auth: Keycloak with integrated Admin-Panel
+Database: PostgreSQL Database
