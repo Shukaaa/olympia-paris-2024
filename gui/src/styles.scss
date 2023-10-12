@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+$link-color: #1ea7fd;
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: darken($link-color, 10%);
+  }
+
+  &:visited {
+    color: $link-color
+  }
+}
+
+mat-icon {
+  vertical-align: middle;
+  padding-right: 0.25em;
+}
+
+@font-face {
+  font-family: 'OstFont';
+  src:  url('/assets/fonts/Paris2024.woff2') format('woff2')
+}
+
+.ost-font {
+  font-family: 'OstFont', serif;
+}

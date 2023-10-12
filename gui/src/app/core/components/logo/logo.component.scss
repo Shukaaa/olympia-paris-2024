@@ -1,0 +1,26 @@
+// make the svg only white
+
+svg {
+  fill: white;
+  width: 200px;
+  height: 200px;
+}
+
+circle {
+  stroke: white;
+}
+
+.olympics {
+  animation: fadeIn .6s linear 1 both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
