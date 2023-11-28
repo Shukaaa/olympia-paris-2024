@@ -1,3 +1,14 @@
+@mixin border {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 50%;
+  bottom: -2px;
+  margin-left: -50%;
+  background: #fff;
+}
+
 ul {
   margin: 0;
   padding: 0.5em 0 0;
@@ -17,15 +28,10 @@ li {
 span {
   position: relative;
 
-  @mixin border {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 50%;
-    bottom: -2px;
-    margin-left: -50%;
-    background: #fff;
+  &.activeOn {
+    &:after {
+      @include border;
+    }
   }
 
   &.active {
@@ -37,7 +43,7 @@ span {
     }
   }
 
-  &.inactive {
+  &.inactive:not(.activeOn) {
     &:after {
       @include border;
       transform: scaleX(0);
