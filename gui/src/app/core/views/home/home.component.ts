@@ -10,8 +10,29 @@ import {CarouselData} from "../../types/carousel";
 export class HomeComponent {
   constructor() {
     for (let i = 0; i < 3; i++) {
+      let title = "Top " + (i + 1);
+
+      switch (i) {
+        case 0:
+          title += " 🥇";
+          break;
+        case 1:
+          title += " 🥈";
+          break;
+        case 2:
+          title += " 🥉";
+          break;
+      }
+
       this.topDataMale.push({
-        title: `Top ${i + 1}`,
+        title: title,
+        description: `${faker.person.fullName()}`,
+        image: faker.image.people(400, 400, true),
+        link: 'https://via.placeholder.com/150'
+      });
+
+      this.topDataFemale.push({
+        title: title,
         description: `${faker.person.fullName()}`,
         image: faker.image.people(400, 400, true),
         link: 'https://via.placeholder.com/150'

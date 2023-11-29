@@ -43,10 +43,10 @@ p {
   @include textProperties;
 
   font-size: 1em;
-  font-weight: 300;
   line-height: 1.4;
 
-  background: #333;
+  background: var(--golden-color);
+  border-radius: 25px;
 
   bottom: 0;
 }
