@@ -22,11 +22,19 @@
   }
 }
 
-h1 {
+@mixin positioning($left) {
   position: absolute;
-  font-size: 3em;
   margin: 0;
   top: 50%;
-  left: 22%;
+  left: $left;
   transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 3em;
+  @include positioning(22%);
+}
+
+div {
+  @include positioning(78%);
 }

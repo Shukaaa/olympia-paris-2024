@@ -1,2 +1,7 @@
 <svg-logo id="logo" (click)="openLink('https://www.paris2024.org/en/')"></svg-logo>
 <h1 class="ost-font">Alle Ergebnisse der <br/> Olympischen Spiele <br/> in Paris!</h1>
+<div>
+  <app-toolbar-selector (sexSelected)="sexUpdated($event)" (disciplineSelected)="disciplineUpdated($event)"></app-toolbar-selector>
+  <hr>
+  <app-carousel [data]="topDataMale" [imagesShown]="1"></app-carousel>
+</div>

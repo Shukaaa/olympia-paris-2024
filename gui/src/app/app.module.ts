@@ -9,6 +9,8 @@ import { ErrorComponent } from './core/views/error/error.component';
 import { LogoComponent } from './core/components/logo/logo.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import {MatIconModule} from "@angular/material/icon";
+import { CarouselComponent } from './core/components/carousel/carousel.component';
+import { ToolbarSelectorComponent } from './core/components/toolbar-selector/toolbar-selector.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {MatIconModule} from "@angular/material/icon";
     HomeComponent,
     ErrorComponent,
     LogoComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarouselComponent,
+    ToolbarSelectorComponent
   ],
   imports: [
     BrowserModule,
