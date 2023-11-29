@@ -16,31 +16,18 @@ export class HomeComponent {
         image: faker.image.people(400, 400, true),
         link: 'https://via.placeholder.com/150'
       });
+
+      this.topDataFemale.push({
+        title: `Top ${i + 1}`,
+        description: `${faker.person.fullName()}`,
+        image: faker.image.people(400, 400, true),
+        link: 'https://via.placeholder.com/150'
+      });
     }
   }
 
   topDataMale: CarouselData[] = [];
-
-  topDataFemale = [
-    {
-      title: 'Top 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
-      link: 'https://via.placeholder.com/150'
-    },
-    {
-      title: 'Top 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
-      link: 'https://via.placeholder.com/150'
-    },
-    {
-      title: 'Top 3',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
-      link: 'https://via.placeholder.com/150'
-    }
-  ];
+  topDataFemale: CarouselData[] = [];
 
   selectedSex = ""
   selectedDiscipline = ""
