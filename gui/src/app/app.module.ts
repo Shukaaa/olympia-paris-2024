@@ -11,6 +11,8 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import {MatIconModule} from "@angular/material/icon";
 import { CarouselComponent } from './core/components/carousel/carousel.component';
 import { ToolbarSelectorComponent } from './core/components/toolbar-selector/toolbar-selector.component';
+import { DisciplinesComponent } from './core/views/disciplines/disciplines.component';
+import { ImageDirectorComponent } from './core/components/image-director/image-director.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ToolbarSelectorComponent } from './core/components/toolbar-selector/too
     LogoComponent,
     NavbarComponent,
     CarouselComponent,
-    ToolbarSelectorComponent
+    ToolbarSelectorComponent,
+    DisciplinesComponent,
+    ImageDirectorComponent
   ],
   imports: [
     BrowserModule,
