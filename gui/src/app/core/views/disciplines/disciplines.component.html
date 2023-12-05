@@ -1,3 +1,8 @@
 <section>
-  <app-image-director [src]="data.src" [title]="data.title" *ngFor="let data of disciplineData"></app-image-director>
+  <app-image-director
+    [src]="data.src"
+    [srcLow]="data.srcLow"
+    [title]="data.title"
+    *ngFor="let data of disciplineData">
+  </app-image-director>
 </section>

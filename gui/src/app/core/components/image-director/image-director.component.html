@@ -1,4 +1,7 @@
 <main>
   <h1 class="ost-font">{{title}}</h1>
-  <img [src]="src" [alt]="title + ' image'" [routerLink]="title.toLocaleLowerCase()">
+  <img [src]="src"
+       style="background-image: url('{{srcLow}}')"
+       [alt]="title + ' image'"
+       [routerLink]="title.toLocaleLowerCase()">
 </main>

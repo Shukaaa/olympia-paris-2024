@@ -8,4 +8,5 @@ import {Component, Input} from '@angular/core';
 export class ImageDirectorComponent {
   @Input() title: string = "";
   @Input() src: string = "";
+  @Input() srcLow: string = "";
 }
