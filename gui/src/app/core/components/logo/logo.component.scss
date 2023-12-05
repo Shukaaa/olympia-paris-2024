@@ -10,8 +10,14 @@ circle {
   stroke: white;
 }
 
-.olympics {
+.olympics > circle {
   animation: fadeIn .6s linear 1 both;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
 }
 
 @keyframes fadeIn {
@@ -22,5 +28,3 @@ circle {
     opacity: 1;
   }
 }
-
-
