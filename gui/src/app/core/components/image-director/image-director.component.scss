@@ -3,8 +3,8 @@ main {
 }
 
 img {
-  width: 300px;
-  height: 500px;
+  width: 20vw;
+  height: 69vh;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
@@ -17,7 +17,7 @@ img {
 
   &:hover {
     filter: brightness(100%);
-    transform: translateY(-2.1em);
+    transform: translateY(-2.2em);
   }
 }
 
