@@ -38,3 +38,7 @@ h1 {
 div {
   @include positioning(78%);
 }
+
+.right-nav {
+  width: 28vw;
+}
