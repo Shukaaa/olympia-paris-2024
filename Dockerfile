@@ -1,6 +1,6 @@
-FROM nginx:1.25.1
+FROM caddy:alpine
 
 COPY dist/gui /app/
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY Caddyfile /etc/caddy/Caddyfile
 
 EXPOSE 80
