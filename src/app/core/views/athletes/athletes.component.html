@@ -1,1 +1,22 @@
-<p>athletes works!</p>
+<ng-container *ngIf="athletes">
+  <div class="search">
+    <input placeholder="Search for Athlete Name" (keydown)="searchValueEvent = $event">
+    <button (click)="searchChanged()">Search</button>
+  </div>
+
+  <div *ngFor="let athleteCountryMap of getAthleteCountryMap() | keyvalue">
+    <div class="ost-font country-title">
+      <img src="https://flagsapi.com/{{athleteCountryMap.value[0].country.iso2}}/shiny/64.png" alt="flag" width="40"
+           height="40">
+      <h1>{{ athleteCountryMap.key }}</h1>
+    </div>
+
+    <div class="athlete-list">
+      <app-athlete *ngFor="let athlete of athleteCountryMap.value" [athlete]="athlete"></app-athlete>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!athletes">
+  <app-loader></app-loader>
+</ng-container>

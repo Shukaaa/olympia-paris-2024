@@ -48,3 +48,26 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+input, button {
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid var(--golden-color);
+  background-color: transparent;
+  color: #fff;
+}
+
+button {
+  $golden-color: #d7c378;
+  cursor: pointer;
+
+  &:hover {
+
+    background-color: $golden-color;
+  }
+
+  &:active {
+    background-color: darken($golden-color, 10%);
+  }
+}

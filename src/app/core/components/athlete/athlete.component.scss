@@ -1,0 +1,39 @@
+@import "../../../../mixins";
+
+.athlete-box {
+  @include olympia-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  margin: 0 auto;
+}
+
+hr {
+  width: 100%;
+  margin: 10px 0;
+
+  border: 0;
+  border-top: 1px solid var(--golden-color);
+}
+
+h2 {
+  margin: 0;
+}
+
+.athlete-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+.m {
+  color: #1ea7fd;
+}
+
+.f {
+  color: #ff4081;
+}

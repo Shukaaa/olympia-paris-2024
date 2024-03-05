@@ -1,4 +1,4 @@
 export const environment = {
   prod: false,
-  apiPath: "http://olymp/api"
+  apiPath: "http://127.0.0.1:8000/api"
 }

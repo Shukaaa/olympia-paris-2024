@@ -1,0 +1,29 @@
+.country-title {
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--golden-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.5em;
+}
+
+.athlete-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+h1 {
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em;
+}

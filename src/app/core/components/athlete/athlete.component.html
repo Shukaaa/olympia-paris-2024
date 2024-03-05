@@ -1,0 +1,12 @@
+<div class="athlete-box">
+  <div class="athlete-title">
+    <mat-icon [className]="athlete.sex">{{athlete.sex === 'm' ? 'male' : 'female'}}</mat-icon>
+    <h2>{{ athlete.firstName }} {{ athlete.lastName }}</h2>
+  </div>
+  <i>{{athlete.description}}</i>
+  <hr>
+  <div class="athlete-info">
+    <p><strong>Nationality:</strong> {{ athlete.country.name }}</p>
+    <p><strong>Age:</strong> {{ calculateAge() }} (Born: {{ athlete.birthdate | date }})</p>
+  </div>
+</div>

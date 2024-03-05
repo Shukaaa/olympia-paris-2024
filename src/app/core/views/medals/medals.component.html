@@ -1,1 +1,13 @@
-<p>medals works!</p>
+<ng-container *ngIf="swimmingMatchData && displayedSwimmingMatchData && athletes">
+  <app-sex-selector (sexSelected)="sexSelected($event)"></app-sex-selector>
+  <div class="global-stats-box">
+
+  </div>
+  <div *ngFor="let swimmingData of displayedSwimmingMatchData">
+    {{swimmingData.athleteId}}
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!swimmingMatchData || !displayedSwimmingMatchData ||!athletes">
+  <app-loader></app-loader>
+</ng-container>
