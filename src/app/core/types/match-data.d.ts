@@ -11,10 +11,30 @@ export type MatchData<T> = [
   },
 ]
 
-export type SwimmingData = {
+type MatchDataWithTime = {
   id: number,
   athleteId: number,
   athlete: Athlete | null,
   time: number,
+  disqualified: boolean
+}
+
+export type SwimmingData = MatchDataWithTime;
+export type SprintData = MatchDataWithTime;
+
+export type LongjumpData = {
+  id: number,
+  athleteId: number,
+  athlete: Athlete | null,
+  jumpLength: number[]
+  disqualified: boolean
+}
+
+export type ShowjumpingData = {
+  id: number,
+  athleteId: number,
+  athlete: Athlete | null,
+  time: number,
+  penaltyPoints: number,
   disqualified: boolean
 }

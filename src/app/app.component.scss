@@ -6,6 +6,16 @@
   background-size: 120%;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   height: 100dvh;
   position: relative;
+}
+
+.overflow {
+  height: 90%;
+  overflow-y: auto;
+}
+
+olympia-navbar {
+  height: 10%;
 }
