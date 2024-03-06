@@ -9,13 +9,27 @@ import {MatchData, SprintData} from "../../types/match-data";
 })
 export class SprintComponent implements OnInit {
   sprintMatchData: MatchData<SprintData> | undefined;
+  disqualifiedMatches: MatchData<SprintData> | undefined;
+  sex = 'male';
 
   constructor(private olympiaService: OlympiaService) { }
 
   ngOnInit() {
-    this.olympiaService.getSprintMatchDataResponse().subscribe((res) => {
-      this.sprintMatchData = res;
-      console.log(this.sprintMatchData)
-    })
+    this.olympiaService.getFilteredAndSortedSprintMatchData(this.getData.bind(this));
+  }
+
+  getData(sprintMatchData: MatchData<SprintData>, disqualifiedMatches: MatchData<SprintData>) {
+    this.sprintMatchData = sprintMatchData;
+    this.disqualifiedMatches = disqualifiedMatches;
+  }
+
+  disqualifiedCount() {
+    const result = this.disqualifiedMatches?.[this.sex === 'male' ? 0 : 1].matchData.length
+
+    if (result === undefined) {
+      return 0;
+    }
+
+    return result;
   }
 }

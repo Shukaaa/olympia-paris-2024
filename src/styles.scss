@@ -71,3 +71,29 @@ button {
     background-color: darken($golden-color, 10%);
   }
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1em;
+  color: #fff;
+  border-radius: 15px;
+
+  th, td {
+    padding: 0.5em;
+    border: 1px solid var(--golden-color);
+  }
+
+  th {
+    background-color: var(--golden-color);
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}

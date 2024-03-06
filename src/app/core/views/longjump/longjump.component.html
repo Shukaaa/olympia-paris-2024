@@ -1,1 +1,73 @@
-<p>longjump works!</p>
+<ng-container *ngIf="longjumpMatchData">
+  <app-sex-selector (sexSelected)="sex = $event"></app-sex-selector>
+  <br/>
+  <div class="medal-ranking">
+    <div class="athletes">
+      <ng-container *ngFor="let match of longjumpMatchData[sex === 'male' ? 0 : 1].matchData; let index = index">
+        <div *ngIf="index < 3" [className]="'athlete athlete-child-'+(index+1)">
+          <div class="medal-emoji">
+            <h1>
+              <ng-container *ngIf="index === 0">🥇</ng-container>
+              <ng-container *ngIf="index === 1">🥈</ng-container>
+              <ng-container *ngIf="index === 2">🥉</ng-container>
+            </h1>
+          </div>
+          <div class="athlete-details">
+            <h4>
+              <img src="https://flagsapi.com/{{match.athlete?.country?.iso2}}/shiny/32.png" alt="flag" width="32" height="32" [matTooltip]="match.athlete?.country?.name+''">
+              <span>{{ match.athlete?.firstName + " " + match.athlete?.lastName }}</span>
+            </h4>
+            <p>Best jump: {{ match.jumpLength[0] }}m</p>
+            <p>All jumps: {{match.jumpLength.toString()}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <br/>
+  <table *ngIf="longjumpMatchData[sex === 'male' ? 0 : 1].matchData.length > 2">
+    <tr>
+      <th>Place</th>
+      <th>Athlete</th>
+      <th>Best jump</th>
+      <th>All jumps</th>
+    </tr>
+    <ng-container *ngFor="let match of longjumpMatchData[sex === 'male' ? 0 : 1].matchData; let index = index">
+      <tr *ngIf="index > 2">
+        <td>{{ index + 1 }}</td>
+        <td>
+          <img src="https://flagsapi.com/{{match.athlete?.country?.iso2}}/shiny/32.png" alt="flag" width="18" height="18" [matTooltip]="match.athlete?.country?.name+''">
+          {{ match.athlete?.firstName + " " + match.athlete?.lastName }}
+        </td>
+        <td>{{ match.jumpLength[0] }}m</td>
+        <td>{{match.jumpLength.toString()}}</td>
+      </tr>
+    </ng-container>
+    <tr *ngIf="longjumpMatchData[sex === 'male' ? 0 : 1].matchData.length <= 0">
+      <td colspan="3" style="text-align: center"><i>Not enough data captured</i></td>
+    </tr>
+  </table>
+  <br/>
+  <div *ngIf="disqualifiedCount() > 0">
+    <h3 style="text-align: center">Disqualified runs</h3>
+    <table>
+      <tr>
+        <th>Athlete</th>
+        <th>Best jump</th>
+        <th>All jumps</th>
+      </tr>
+      <tr *ngFor="let match of disqualifiedMatches?.[sex === 'male' ? 0 : 1]?.matchData">
+        <td>
+          <img src="https://flagsapi.com/{{match.athlete?.country?.iso2}}/shiny/32.png" alt="flag" width="18" height="18" [matTooltip]="match.athlete?.country?.name+''">
+          {{ match.athlete?.firstName + " " + match.athlete?.lastName }}
+        </td>
+        <td>{{ match.jumpLength[0] }}m</td>
+        <td>{{match.jumpLength.toString()}}</td>
+      </tr>
+    </table>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!longjumpMatchData">
+  <app-loader></app-loader>
+</ng-container>

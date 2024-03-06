@@ -21,6 +21,7 @@ export class AthleteComponent {
     birthdate: new Date(),
     sex: "m"
   }
+  @Input() athleteMedalsMap: Map<number, { gold: string[], silver: string[], bronze: string[] }> = new Map<number, { gold: string[], silver: string[], bronze: string[] }>()
 
   calculateAge(): number {
     const birthdate = new Date(this.athlete.birthdate)
@@ -28,5 +29,9 @@ export class AthleteComponent {
     const ageDate = new Date(ageDiffMs)
 
     return Math.abs(ageDate.getUTCFullYear() - 1970)
+  }
+
+  getMedals(): { gold: string[], silver: string[], bronze: string[] } {
+    return this.athleteMedalsMap.get(this.athlete.id) || { gold: [], silver: [], bronze: [] }
   }
 }

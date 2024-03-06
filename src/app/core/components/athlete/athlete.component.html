@@ -8,5 +8,14 @@
   <div class="athlete-info">
     <p><strong>Nationality:</strong> {{ athlete.country.name }}</p>
     <p><strong>Age:</strong> {{ calculateAge() }} (Born: {{ athlete.birthdate | date }})</p>
+    <p *ngIf="getMedals().gold.length > 0 && getMedals().gold">
+      <strong>Gold Medals:</strong> {{ getMedals().gold.length }} for {{ getMedals().gold.toString()}}
+    </p>
+    <p *ngIf="getMedals().silver.length > 0 && getMedals().silver">
+      <strong>Silver Medals:</strong> {{ getMedals().silver.length }} for {{ getMedals().silver.toString()}}
+    </p>
+    <p *ngIf="getMedals().bronze.length > 0 && getMedals().bronze">
+      <strong>Bronze Medals:</strong> {{ getMedals().bronze.length }} for {{ getMedals().bronze.toString()}}
+    </p>
   </div>
 </div>

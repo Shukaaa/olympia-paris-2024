@@ -9,7 +9,6 @@ import { ErrorComponent } from './core/views/error/error.component';
 import { LogoComponent } from './core/components/logo/logo.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import {MatIconModule} from "@angular/material/icon";
-import { CarouselComponent } from './core/components/carousel/carousel.component';
 import { SexSelectorComponent } from './core/components/sex-selector/sex-selector.component';
 import { DisciplinesComponent } from './core/views/disciplines/disciplines.component';
 import { ImageDirectorComponent } from './core/components/image-director/image-director.component';
@@ -24,6 +23,7 @@ import { SprintComponent } from './core/views/sprint/sprint.component';
 import { LongjumpComponent } from './core/views/longjump/longjump.component';
 import { SwimmingComponent } from './core/views/swimming/swimming.component';
 import { ShowjumpingComponent } from './core/views/showjumping/showjumping.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { ShowjumpingComponent } from './core/views/showjumping/showjumping.compo
     ErrorComponent,
     LogoComponent,
     NavbarComponent,
-    CarouselComponent,
     SexSelectorComponent,
     DisciplinesComponent,
     ImageDirectorComponent,
@@ -45,13 +44,14 @@ import { ShowjumpingComponent } from './core/views/showjumping/showjumping.compo
     SwimmingComponent,
     ShowjumpingComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    FormsModule
-  ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatIconModule,
+		FormsModule,
+		MatTooltipModule
+	],
   providers: [
     importProvidersFrom(HttpClientModule),
     OlympiaService

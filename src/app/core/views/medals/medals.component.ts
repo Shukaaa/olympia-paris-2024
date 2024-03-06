@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {OlympiaService} from "../../service/olympia.service";
 import {MatchData, SwimmingData} from "../../types/match-data";
-import {MatchDataUtils} from "../../utils/match-data.utils";
 import {Athlete} from "../../types/athlete";
 
 @Component({
@@ -23,15 +22,7 @@ export class MedalsComponent implements OnInit {
     })
 
     this.olympiaService.getSwimmingMatchDataResponse().subscribe(res => {
-      this.swimmingMatchData = MatchDataUtils.orderSwimmingDataByWinner(res)
-      MatchDataUtils.removeDisqualifiedAthletes(this.swimmingMatchData)
-
-      this.swimmingMatchData.forEach(matchData => {
-        matchData.matchData.forEach(swimmingData => {
-          swimmingData.athlete = this.athletes?.find(athlete => athlete.id === swimmingData.athleteId) || null
-        })
-      })
-
+      this.swimmingMatchData = res;
       this.sexSelected("male");
     })
   }
