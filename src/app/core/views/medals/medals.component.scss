@@ -1,7 +1,19 @@
 @import "../../../../mixins";
 
-.global-stats-box {
-  @include olympia-box;
+table {
   width: 33%;
-  margin: 10px auto;
+  margin: 1em auto;
+}
+
+th {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  mat-icon {
+    padding: 0;
+    margin-bottom: 1%;
+  }
 }

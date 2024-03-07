@@ -1,13 +1,25 @@
-<ng-container *ngIf="swimmingMatchData && displayedSwimmingMatchData && athletes">
-  <app-sex-selector (sexSelected)="sexSelected($event)"></app-sex-selector>
-  <div class="global-stats-box">
+<ng-container *ngIf="loadingScore === 100">
+  <app-sex-selector (sexSelected)="setSex($event)"></app-sex-selector>
 
-  </div>
-  <div *ngFor="let swimmingData of displayedSwimmingMatchData">
-    {{swimmingData.athleteId}}
-  </div>
+  <table>
+    <tr>
+      <th (click)="sortMapsByName()"><mat-icon>filter_alt</mat-icon> Country</th>
+      <th (click)="sortMapsByGoldMedalCount()"><mat-icon>filter_alt</mat-icon> Gold Medals</th>
+      <th (click)="sortMapsBySilverMedalCount()"><mat-icon>filter_alt</mat-icon> Silver Medals</th>
+      <th (click)="sortMapsByBronzeMedalCount()"><mat-icon>filter_alt</mat-icon> Bronze Medals</th>
+    </tr>
+    <tr *ngFor="let medalInformation of medalData">
+      <td>
+        <img src="https://flagsapi.com/{{medalInformation.country.iso2}}/shiny/32.png" alt="flag" width="18" height="18">
+        {{medalInformation.country.name}}
+      </td>
+      <td>{{medalInformation.medals.gold}}</td>
+      <td>{{medalInformation.medals.silver}}</td>
+      <td>{{medalInformation.medals.bronze}}</td>
+    </tr>
+  </table>
 </ng-container>
 
-<ng-container *ngIf="!swimmingMatchData || !displayedSwimmingMatchData ||!athletes">
+<ng-container *ngIf="loadingScore !== 100">
   <app-loader></app-loader>
 </ng-container>

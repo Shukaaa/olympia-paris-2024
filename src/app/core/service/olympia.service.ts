@@ -96,12 +96,11 @@ export class OlympiaService {
           matchData.matchData = this.removeDisqualifiedMatches(matchData);
 
           longjumpMatchData = res;
-          console.log(disqualifiedMatches);
-
-          if (disqualifiedMatches) {
-            cb(longjumpMatchData, disqualifiedMatches);
-          }
         })
+
+        if (longjumpMatchData && disqualifiedMatches) {
+          cb(longjumpMatchData, disqualifiedMatches);
+        }
       });
     });
   }
@@ -129,11 +128,11 @@ export class OlympiaService {
           matchData.matchData = this.removeDisqualifiedMatches(matchData);
 
           showjumpingMatchData = res;
-
-          if (disqualifiedMatches) {
-            cb(showjumpingMatchData, disqualifiedMatches);
-          }
         })
+
+        if (showjumpingMatchData && disqualifiedMatches) {
+          cb(showjumpingMatchData, disqualifiedMatches);
+        }
       });
     });
   }
@@ -152,12 +151,11 @@ export class OlympiaService {
           matchData.matchData = this.removeDisqualifiedMatches(matchData);
 
           sprintMatchData = res;
-
-          if (disqualifiedMatches) {
-            console.log("sprint", sprintMatchData);
-            cb(sprintMatchData, disqualifiedMatches);
-          }
         })
+
+        if (sprintMatchData && disqualifiedMatches) {
+          cb(sprintMatchData, disqualifiedMatches);
+        }
       });
     });
   }
@@ -176,11 +174,11 @@ export class OlympiaService {
           matchData.matchData = this.removeDisqualifiedMatches(matchData);
 
           swimmingMatchData = res;
-
-          if (disqualifiedMatches) {
-            cb(swimmingMatchData, disqualifiedMatches);
-          }
         })
+
+        if (disqualifiedMatches && swimmingMatchData) {
+          cb(swimmingMatchData, disqualifiedMatches);
+        }
       });
     });
   }

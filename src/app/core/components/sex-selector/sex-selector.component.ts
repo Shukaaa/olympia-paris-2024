@@ -6,7 +6,7 @@ import {AfterViewInit, Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./sex-selector.component.scss']
 })
 export class SexSelectorComponent implements AfterViewInit {
-  @Output() sexSelected = new EventEmitter<string>();
+  @Output() sexSelected = new EventEmitter<'male' | 'female'>();
 
   ngAfterViewInit() {
     this.toggleChipSex("male");
