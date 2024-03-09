@@ -159,7 +159,5 @@ export class MedalsComponent implements OnInit {
         medals: medals
       }
     });
-
-    console.log(this.medalData);
   }
 }
