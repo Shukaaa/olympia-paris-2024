@@ -1,0 +1,13 @@
+RewriteEngine On
+# Redirect all HTTP traffic to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Check if the requested resource exists as a file or directory
+# If yes, serve it as is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If requested resource doesn't exist, redirect all requests to index.html
+RewriteRule ^ index.html [L]
